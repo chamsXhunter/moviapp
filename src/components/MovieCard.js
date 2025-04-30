@@ -1,7 +1,9 @@
 import React from 'react'
+import { Link, NavLink } from 'react-router-dom'
 import ReactStars from 'react-stars'
 function MovieCard({el}) {
   return (
+    <Link to={`/trailer/${el.name}`}>
     <div className='mycard'>
       <img src={el.posterurl} />
       <h5>{el.name}</h5>
@@ -15,6 +17,7 @@ function MovieCard({el}) {
   value={el.rating}
   />
     </div>
+    </Link>
   )
 }
 

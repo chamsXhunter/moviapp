@@ -4,6 +4,10 @@ import Navbarr from "./components/Navbarr"
 import MovieList from './components/MovieList';
 import { useState } from 'react';
 import Addmovie from './components/Addmovie';
+import { Route, Routes } from 'react-router-dom';
+import About from './components/About';
+import Contact from './components/Contact';
+import Trailer from './components/Trailer';
 function App() {
 const [movies, setmovies] = useState([
     {
@@ -118,8 +122,13 @@ const [filterrate, setfilterrate] = useState("");
    
 <div className="App">
 <Navbarr setfiltertext={setfiltertext} setfilterrate={setfilterrate}/>
-<MovieList movies={movies} setmovies={setmovies} filtertext={filtertext} filterrate={filterrate}/>
 
+<Routes>
+        <Route path="/" element={ <MovieList movies={movies} setmovies={setmovies} filtertext={filtertext} filterrate={filterrate}/> } />
+        <Route path="/about" element={ <About/> } />
+        <Route path="/contact" element={ <Contact/> } />
+        <Route path="/trailer/:name" element={ <Trailer movies={movies}/> } />
+      </Routes>
 </div>
 
 

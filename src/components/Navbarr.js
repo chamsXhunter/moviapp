@@ -4,13 +4,16 @@ import Container from 'react-bootstrap/Container';
 import Form from 'react-bootstrap/Form';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
+import { Link } from 'react-router-dom';
 import ReactStars from 'react-stars'
 
 function Navbarr({setfiltertext, setfilterrate}) {
   return (
    <Navbar  bg="dark" data-bs-theme="dark">
       <Container fluid>
-        <Navbar.Brand href="#">Movie App</Navbar.Brand>
+        <Navbar.Brand href="#"><Link to='/'>Movie App</Link></Navbar.Brand>
+        <Navbar.Brand href="#"><Link to='/contact'>contact</Link></Navbar.Brand>
+        <Navbar.Brand href="#"><Link to='/about'>About</Link></Navbar.Brand>
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll">
           <Nav
